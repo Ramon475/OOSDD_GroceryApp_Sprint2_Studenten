@@ -22,13 +22,13 @@ namespace Grocery.App.ViewModels
 
         partial void OnGroceryListChanged(GroceryList value)
         {
-            GroceryList = _groceryListService.Update(value);
+            groceryList = _groceryListService.Update(value);
         }
 
         [RelayCommand]
         private async Task ChangeColor(string color)
         {
-            GroceryList.Color = color;
+            groceryList.Color = color;
             OnGroceryListChanged(GroceryList);
             await Shell.Current.GoToAsync("..");
         }
